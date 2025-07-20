@@ -24,7 +24,7 @@ const CTASection = () => {
         <div className="max-w-4xl mx-auto">
           <div className="glass-blue p-12 lg:p-16 rounded-3xl border border-white/10 text-center space-y-10">
             {/* Badge */}
-            <div className="inline-flex items-center space-x-2 bg-[hsl(81,100%,36%)]/20 text-[hsl(81,100%,36%)] px-4 py-2 rounded-full text-sm font-medium border border-[hsl(81,100%,36%)]/30">
+            <div className="inline-flex items-center space-x-2 bg-[hsl(81,100%,36%)]/20 text-microsoft-green px-4 py-2 rounded-full text-sm font-medium border border-[hsl(81,100%,36%)]/30">
               <span>🚀</span>
               <span>Ready to Transform Your Business?</span>
             </div>
@@ -32,7 +32,7 @@ const CTASection = () => {
             {/* Main Heading */}
             <div className="space-y-6">
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                Start Your <span className="text-[hsl(200,100%,47%)]">Digital Transformation</span><br />
+                Start Your <span className="text-microsoft-blue">Digital Transformation</span><br />
                 Today
               </h2>
               <p className="text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
@@ -45,7 +45,7 @@ const CTASection = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
               {benefits.map((benefit) => (
                 <div key={benefit} className="flex items-center space-x-3 justify-center sm:justify-start">
-                  <CheckCircle className="h-6 w-6 text-[hsl(81,100%,36%)] flex-shrink-0" />
+                  <CheckCircle className="h-6 w-6 text-microsoft-green flex-shrink-0" />
                   <span className="text-white font-medium">{benefit}</span>
                 </div>
               ))}
@@ -97,7 +97,7 @@ const CTASection = () => {
             <div className="glass-green p-8 rounded-2xl border border-[hsl(81,100%,36%)]/20">
               <div className="flex items-center justify-center space-x-4 mb-4">
                 <div className="w-10 h-10 bg-[hsl(81,100%,36%)]/20 rounded-full flex items-center justify-center">
-                  <CheckCircle className="h-6 w-6 text-[hsl(81,100%,36%)]" />
+                  <CheckCircle className="h-6 w-6 text-microsoft-green" />
                 </div>
                 <h3 className="text-xl font-semibold text-white">Our Promise</h3>
               </div>
@@ -110,7 +110,7 @@ const CTASection = () => {
             {/* Urgency */}
             <div className="text-center space-y-4">
               <p className="text-white/80">
-                <span className="text-[hsl(81,100%,36%)] font-semibold">Limited Time:</span> Free migration assessment for the first 10 clients this month
+                <span className="text-microsoft-green font-semibold">Limited Time:</span> Free migration assessment for the first 10 clients this month
               </p>
               <div className="flex justify-center">
                 <div className="flex space-x-2">

@@ -82,12 +82,12 @@ const ServicesSection = () => {
             ];
             
             const iconColors = [
-              "text-[hsl(14,95%,54%)]",
-              "text-[hsl(81,100%,36%)]",
-              "text-[hsl(200,100%,47%)]", 
-              "text-[hsl(43,100%,68%)]",
-              "text-[hsl(14,95%,54%)]",
-              "text-[hsl(81,100%,36%)]"
+               "text-microsoft-red",
+               "text-microsoft-green",
+               "text-microsoft-blue", 
+               "text-microsoft-yellow",
+               "text-microsoft-red",
+               "text-microsoft-green"
             ];
 
             return (

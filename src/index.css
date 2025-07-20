@@ -187,6 +187,35 @@
     box-shadow: var(--shadow-glass);
   }
 
+  /* Microsoft Logo Color Gradients */
+  .text-microsoft-red {
+    background: linear-gradient(135deg, hsl(14,95%,54%), hsl(14,95%,44%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-microsoft-green {
+    background: linear-gradient(135deg, hsl(81,100%,36%), hsl(81,100%,26%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-microsoft-blue {
+    background: linear-gradient(135deg, hsl(200,100%,47%), hsl(200,100%,37%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-microsoft-yellow {
+    background: linear-gradient(135deg, hsl(43,100%,68%), hsl(43,100%,58%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
   .glow-microsoft-red {
     box-shadow: var(--glow-microsoft-red);
   }

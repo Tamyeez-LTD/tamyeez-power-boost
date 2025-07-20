@@ -93,19 +93,19 @@ const HeroSection = () => {
           {/* Statistics */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 animate-fade-in delay-600">
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary">60%</div>
+              <div className="text-3xl font-bold text-microsoft-blue">60%</div>
               <div className="text-sm text-muted-foreground">Cost Reduction</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary">40%</div>
+              <div className="text-3xl font-bold text-microsoft-green">40%</div>
               <div className="text-sm text-muted-foreground">Productivity Boost</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary">50+</div>
+              <div className="text-3xl font-bold text-microsoft-red">50+</div>
               <div className="text-sm text-muted-foreground">Happy Clients</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary">24/7</div>
+              <div className="text-3xl font-bold text-microsoft-yellow">24/7</div>
               <div className="text-sm text-muted-foreground">Support</div>
             </div>
           </div>

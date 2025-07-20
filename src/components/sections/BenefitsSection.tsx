@@ -77,7 +77,7 @@ const BenefitsSection = () => {
           <div className="space-y-8">
             <div className="space-y-6">
               <h3 className="text-3xl lg:text-4xl font-bold text-white">
-                Why Choose <span className="text-microsoft-blue">Tamyeez</span>?
+                Why Choose <span className="text-[hsl(200,100%,47%)]">Tamyeez</span>?
               </h3>
               
               <div className="space-y-6">
@@ -127,7 +127,7 @@ const BenefitsSection = () => {
           <div className="space-y-8">
             {/* Client Success Story */}
             <div className="glass-blue p-8 rounded-2xl border border-white/10">
-              <h4 className="text-lg font-semibold text-microsoft-blue mb-4">Client Success Story</h4>
+              <h4 className="text-lg font-semibold text-[hsl(200,100%,47%)] mb-4">Client Success Story</h4>
               <blockquote className="text-white/90 italic text-lg mb-6 leading-relaxed">
                 "Tamyeez transformed our manual processes into automated workflows. 
                 We've saved over $50,000 annually and our team productivity has skyrocketed."
@@ -140,15 +140,15 @@ const BenefitsSection = () => {
             {/* Statistics */}
             <div className="grid grid-cols-3 gap-6 text-center">
               <div className="space-y-2">
-                 <div className="text-4xl font-bold text-microsoft-green">99%</div>
-                 <div className="text-white/70 text-sm">Client Satisfaction</div>
-               </div>
-               <div className="space-y-2">
-                 <div className="text-4xl font-bold text-microsoft-blue">50+</div>
-                 <div className="text-white/70 text-sm">Projects Delivered</div>
-               </div>
-               <div className="space-y-2">
-                 <div className="text-4xl font-bold text-microsoft-red">24h</div>
+                <div className="text-4xl font-bold text-[hsl(200,100%,47%)]">99%</div>
+                <div className="text-white/70 text-sm">Client Satisfaction</div>
+              </div>
+              <div className="space-y-2">
+                <div className="text-4xl font-bold text-[hsl(200,100%,47%)]">50+</div>
+                <div className="text-white/70 text-sm">Projects Delivered</div>
+              </div>
+              <div className="space-y-2">
+                <div className="text-4xl font-bold text-[hsl(200,100%,47%)]">24h</div>
                 <div className="text-white/70 text-sm">Response Time</div>
               </div>
             </div>

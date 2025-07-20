@@ -65,16 +65,16 @@ const ProcessSection = () => {
                   <div className="space-y-6">
                     <div className="flex items-center space-x-4">
                       <div className="w-16 h-16 bg-[hsl(200,100%,47%)]/10 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-[hsl(200,100%,47%)]/20">
-                        <div className="text-microsoft-blue">
+                        <div className="text-[hsl(200,100%,47%)]">
                           {step.icon}
                         </div>
                       </div>
                       <div>
                         <div className="flex items-center space-x-3">
-                          <span className="text-4xl font-bold text-microsoft-blue">{step.step}</span>
+                          <span className="text-4xl font-bold text-[hsl(200,100%,47%)]">{step.step}</span>
                           <h3 className="text-3xl font-bold text-white">{step.title}</h3>
                         </div>
-                        <p className="text-microsoft-blue font-medium text-sm uppercase tracking-wide mt-1">
+                        <p className="text-[hsl(200,100%,47%)] font-medium text-sm uppercase tracking-wide mt-1">
                           {step.subtitle}
                         </p>
                       </div>
@@ -87,7 +87,7 @@ const ProcessSection = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       {step.details.map((detail) => (
                         <div key={detail} className="flex items-center space-x-3">
-                          <ArrowRight className="h-4 w-4 text-microsoft-blue flex-shrink-0" />
+                          <ArrowRight className="h-4 w-4 text-[hsl(200,100%,47%)] flex-shrink-0" />
                           <span className="text-white/70 text-sm">{detail}</span>
                         </div>
                       ))}
@@ -116,7 +116,7 @@ const ProcessSection = () => {
         {/* Why Our Process Works */}
         <div className="text-center space-y-12">
           <h3 className="text-3xl lg:text-4xl font-bold text-white">
-            Why Our Process <span className="text-microsoft-blue">Works</span>
+            Why Our Process <span className="text-[hsl(200,100%,47%)]">Works</span>
           </h3>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

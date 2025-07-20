@@ -156,6 +156,11 @@
     to { box-shadow: 0 0 40px hsl(214, 100%, 59% / 0.4); }
   }
 
+  @keyframes drift {
+    0% { transform: translateX(0) translateY(0); }
+    100% { transform: translateX(20px) translateY(-20px); }
+  }
+
   /* Hover effects */
   .hover-lift {
     transition: transform 0.3s ease, box-shadow 0.3s ease;

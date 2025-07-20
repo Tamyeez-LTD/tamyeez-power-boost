@@ -6,21 +6,50 @@ import heroImage from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
+      {/* Animated Background */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={heroImage} 
-          alt="Technology Background" 
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/60" />
+        {/* Gradient Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />
+        
+        {/* Animated Grid Pattern */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `
+              linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px)
+            `,
+            backgroundSize: '50px 50px',
+            animation: 'drift 20s ease-in-out infinite alternate'
+          }} />
+        </div>
+
+        {/* Flowing Particles */}
+        <div className="absolute inset-0">
+          {Array.from({ length: 20 }).map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-1 h-1 bg-primary/30 rounded-full"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animation: `float ${3 + Math.random() * 4}s ease-in-out infinite ${Math.random() * 2}s`,
+                animationDirection: Math.random() > 0.5 ? 'normal' : 'reverse'
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Glowing Orbs */}
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl animate-pulse delay-1000" />
       </div>
 
-      {/* Floating Elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 bg-primary/10 rounded-full animate-float" />
-      <div className="absolute bottom-32 right-16 w-16 h-16 bg-secondary/10 rounded-full animate-float delay-1000" />
-      <div className="absolute top-1/3 right-20 w-12 h-12 bg-primary/20 rounded-full animate-float delay-2000" />
+      {/* Floating Geometric Elements */}
+      <div className="absolute top-20 left-10 w-16 h-16 border border-primary/20 rotate-45 animate-float" />
+      <div className="absolute bottom-32 right-16 w-12 h-12 border border-secondary/20 rounded-full animate-float delay-1000" />
+      <div className="absolute top-1/3 right-20 w-8 h-8 bg-primary/10 transform rotate-45 animate-float delay-2000" />
+      <div className="absolute bottom-1/2 left-16 w-6 h-20 bg-gradient-to-b from-primary/20 to-transparent animate-float delay-3000" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8">

@@ -50,13 +50,30 @@
     --gradient-primary: linear-gradient(135deg, hsl(214, 100%, 59%) 0%, hsl(240, 100%, 70%) 100%);
     --gradient-card: linear-gradient(145deg, hsl(220, 25%, 8%) 0%, hsl(220, 20%, 12%) 100%);
     
+    /* Microsoft Logo Colors */
+    --microsoft-red: 14 95% 54%;
+    --microsoft-green: 81 100% 36%;
+    --microsoft-blue: 200 100% 47%;
+    --microsoft-yellow: 43 100% 68%;
+    
+    /* Glass Morphism Gradients */
+    --glass-red: linear-gradient(135deg, hsl(14, 95%, 54%, 0.1) 0%, hsl(0, 0%, 0%, 0.2) 100%);
+    --glass-green: linear-gradient(135deg, hsl(81, 100%, 36%, 0.1) 0%, hsl(0, 0%, 0%, 0.2) 100%);
+    --glass-blue: linear-gradient(135deg, hsl(200, 100%, 47%, 0.1) 0%, hsl(0, 0%, 0%, 0.2) 100%);
+    --glass-yellow: linear-gradient(135deg, hsl(43, 100%, 68%, 0.1) 0%, hsl(0, 0%, 0%, 0.2) 100%);
+    
     /* Glow effects */
-    --glow-primary: 0 0 40px hsl(214, 100%, 59% / 0.3);
-    --glow-success: 0 0 30px hsl(142, 76%, 36% / 0.2);
+    --glow-primary: 0 0 40px hsl(214, 100%, 59%, 0.3);
+    --glow-success: 0 0 30px hsl(142, 76%, 36%, 0.2);
+    --glow-microsoft-red: 0 0 30px hsl(14, 95%, 54%, 0.3);
+    --glow-microsoft-green: 0 0 30px hsl(81, 100%, 36%, 0.3);
+    --glow-microsoft-blue: 0 0 30px hsl(200, 100%, 47%, 0.3);
+    --glow-microsoft-yellow: 0 0 30px hsl(43, 100%, 68%, 0.3);
     
     /* Shadows */
-    --shadow-card: 0 10px 30px -10px hsl(220, 30%, 5% / 0.3);
-    --shadow-elevated: 0 20px 40px -15px hsl(220, 30%, 5% / 0.4);
+    --shadow-card: 0 10px 30px -10px hsl(220, 30%, 5%, 0.3);
+    --shadow-elevated: 0 20px 40px -15px hsl(220, 30%, 5%, 0.4);
+    --shadow-glass: 0 8px 32px 0 hsl(0, 0%, 0%, 0.37);
 
     /* Sidebar styling */
     --sidebar-background: 220 25% 8%;
@@ -137,6 +154,55 @@
     box-shadow: var(--shadow-elevated);
   }
 
+  .shadow-glass {
+    box-shadow: var(--shadow-glass);
+  }
+
+  /* Microsoft Glass Morphism Cards */
+  .glass-red {
+    background: var(--glass-red);
+    backdrop-filter: blur(10px);
+    border: 1px solid hsl(14, 95%, 54%, 0.2);
+    box-shadow: var(--shadow-glass);
+  }
+
+  .glass-green {
+    background: var(--glass-green);
+    backdrop-filter: blur(10px);
+    border: 1px solid hsl(81, 100%, 36%, 0.2);
+    box-shadow: var(--shadow-glass);
+  }
+
+  .glass-blue {
+    background: var(--glass-blue);
+    backdrop-filter: blur(10px);
+    border: 1px solid hsl(200, 100%, 47%, 0.2);
+    box-shadow: var(--shadow-glass);
+  }
+
+  .glass-yellow {
+    background: var(--glass-yellow);
+    backdrop-filter: blur(10px);
+    border: 1px solid hsl(43, 100%, 68%, 0.2);
+    box-shadow: var(--shadow-glass);
+  }
+
+  .glow-microsoft-red {
+    box-shadow: var(--glow-microsoft-red);
+  }
+
+  .glow-microsoft-green {
+    box-shadow: var(--glow-microsoft-green);
+  }
+
+  .glow-microsoft-blue {
+    box-shadow: var(--glow-microsoft-blue);
+  }
+
+  .glow-microsoft-yellow {
+    box-shadow: var(--glow-microsoft-yellow);
+  }
+
   /* Animation utilities */
   .animate-float {
     animation: float 6s ease-in-out infinite;
@@ -152,8 +218,8 @@
   }
 
   @keyframes glow {
-    from { box-shadow: 0 0 20px hsl(214, 100%, 59% / 0.2); }
-    to { box-shadow: 0 0 40px hsl(214, 100%, 59% / 0.4); }
+    from { box-shadow: 0 0 20px hsl(214, 100%, 59%, 0.2); }
+    to { box-shadow: 0 0 40px hsl(214, 100%, 59%, 0.4); }
   }
 
   @keyframes drift {
@@ -169,5 +235,10 @@
   .hover-lift:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-elevated);
+  }
+
+  .glass-hover:hover {
+    transform: translateY(-8px) scale(1.02);
+    transition: all 0.3s ease;
   }
 }

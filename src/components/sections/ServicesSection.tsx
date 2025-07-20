@@ -71,30 +71,49 @@ const ServicesSection = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <Card 
-              key={service.title} 
-              className="card-gradient shadow-card hover-lift group cursor-pointer transition-all duration-300"
-            >
-              <CardHeader>
-                <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                  <div className="text-primary">
-                    {service.icon}
+          {services.map((service, index) => {
+            const glassClasses = [
+              "glass-red glow-microsoft-red",
+              "glass-green glow-microsoft-green", 
+              "glass-blue glow-microsoft-blue",
+              "glass-yellow glow-microsoft-yellow",
+              "glass-red glow-microsoft-red",
+              "glass-green glow-microsoft-green"
+            ];
+            
+            const iconColors = [
+              "text-[hsl(14,95%,54%)]",
+              "text-[hsl(81,100%,36%)]",
+              "text-[hsl(200,100%,47%)]", 
+              "text-[hsl(43,100%,68%)]",
+              "text-[hsl(14,95%,54%)]",
+              "text-[hsl(81,100%,36%)]"
+            ];
+
+            return (
+              <Card 
+                key={service.title} 
+                className={`${glassClasses[index]} glass-hover group cursor-pointer transition-all duration-300`}
+              >
+                <CardHeader>
+                  <div className="w-16 h-16 bg-white/5 rounded-lg flex items-center justify-center mb-4 group-hover:bg-white/10 transition-colors backdrop-blur-sm">
+                    <div className={iconColors[index]}>
+                      {service.icon}
+                    </div>
                   </div>
-                </div>
-                <CardTitle className="text-xl font-semibold group-hover:text-primary transition-colors">
-                  {service.title}
-                </CardTitle>
-                <CardDescription className="text-muted-foreground">
-                  {service.description}
-                </CardDescription>
-              </CardHeader>
+                  <CardTitle className="text-xl font-semibold text-white group-hover:text-white/90 transition-colors">
+                    {service.title}
+                  </CardTitle>
+                  <CardDescription className="text-white/70">
+                    {service.description}
+                  </CardDescription>
+                </CardHeader>
               
               <CardContent className="space-y-4">
                 <ul className="space-y-2">
                   {service.features.map((feature) => (
-                    <li key={feature} className="flex items-center text-sm text-muted-foreground">
-                      <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3" />
+                    <li key={feature} className="flex items-center text-sm text-white/70">
+                      <div className={`w-1.5 h-1.5 rounded-full mr-3 ${iconColors[index].replace('text-', 'bg-')}`} />
                       {feature}
                     </li>
                   ))}
@@ -102,7 +121,7 @@ const ServicesSection = () => {
                 
                 <Button 
                   variant="ghost" 
-                  className="w-full group-hover:bg-primary/10 group-hover:text-primary transition-colors" 
+                  className="w-full bg-white/5 hover:bg-white/10 text-white hover:text-white border border-white/10 hover:border-white/20 transition-all backdrop-blur-sm" 
                   asChild
                 >
                   <Link to={service.link}>
@@ -112,7 +131,8 @@ const ServicesSection = () => {
                 </Button>
               </CardContent>
             </Card>
-          ))}
+            );
+          })}
         </div>
 
         <div className="text-center mt-12">

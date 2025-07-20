@@ -11,60 +11,60 @@ const BenefitsSection = () => {
   const benefits = [
     {
       icon: <TrendingDown className="h-8 w-8" />,
-      title: "60% Cost Reduction",
+      title: "60% Cost",
+      subtitle: "Reduction",
       description: "Per user savings through licensing consolidation and process optimization",
-      color: "text-green-400"
+      glassClass: "glass-green",
+      iconColor: "text-[hsl(81,100%,36%)]"
     },
     {
       icon: <TrendingUp className="h-8 w-8" />,
-      title: "40% Productivity Improvement",
+      title: "40% Productivity",
+      subtitle: "Improvement", 
       description: "Streamlined workflows and automated processes boost team efficiency",
-      color: "text-blue-400"
+      glassClass: "glass-blue",
+      iconColor: "text-[hsl(200,100%,47%)]"
     },
     {
       icon: <Shield className="h-8 w-8" />,
-      title: "50% Reduction in Data Breach Risk",
+      title: "50% Reduction in",
+      subtitle: "Data Breach Risk",
       description: "Enterprise-grade security and compliance features protect your business",
-      color: "text-purple-400"
+      glassClass: "glass-red",
+      iconColor: "text-[hsl(14,95%,54%)]"
     },
     {
       icon: <Clock className="h-8 w-8" />,
-      title: "25% Less Device Management Time",
+      title: "25% Less Device",
+      subtitle: "Management Time",
       description: "Simplified IT management with integrated Microsoft ecosystem",
-      color: "text-orange-400"
+      glassClass: "glass-yellow",
+      iconColor: "text-[hsl(43,100%,68%)]"
     }
   ];
 
   return (
-    <section className="py-20">
+    <section className="py-20 bg-black">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center space-y-4 mb-16">
-          <Badge variant="secondary" className="mb-4">
-            Proven Results
-          </Badge>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
-            Measurable <span className="gradient-text">Business Impact</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Our Microsoft Power Platform solutions deliver quantifiable results 
-            that transform your business operations and bottom line.
-          </p>
-        </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {benefits.map((benefit, index) => (
             <Card 
               key={benefit.title}
-              className="card-gradient shadow-card hover-lift text-center group"
+              className={`${benefit.glassClass} glass-hover text-center group border-0`}
             >
-              <CardContent className="p-8 space-y-4">
-                <div className={`w-16 h-16 rounded-full bg-muted/20 flex items-center justify-center mx-auto group-hover:scale-110 transition-transform ${benefit.color}`}>
+              <CardContent className="p-8 space-y-6">
+                <div className={`w-16 h-16 rounded-lg bg-white/5 backdrop-blur-sm flex items-center justify-center mx-auto group-hover:bg-white/10 transition-colors ${benefit.iconColor}`}>
                   {benefit.icon}
                 </div>
-                <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
-                  {benefit.title}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
+                <div className="space-y-2">
+                  <h3 className="text-2xl font-bold text-white leading-tight">
+                    {benefit.title}
+                  </h3>
+                  <h4 className="text-2xl font-bold text-white">
+                    {benefit.subtitle}
+                  </h4>
+                </div>
+                <p className="text-white/70 text-sm leading-relaxed">
                   {benefit.description}
                 </p>
               </CardContent>
@@ -72,78 +72,84 @@ const BenefitsSection = () => {
           ))}
         </div>
 
-        {/* Additional Benefits */}
-        <div className="mt-16 bg-card/50 rounded-2xl p-8 lg:p-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        {/* Why Choose Tamyeez Section */}
+        <div className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="space-y-8">
             <div className="space-y-6">
-              <h3 className="text-2xl lg:text-3xl font-bold">
-                Why Choose <span className="gradient-text">Tamyeez</span>?
+              <h3 className="text-3xl lg:text-4xl font-bold text-white">
+                Why Choose <span className="text-[hsl(200,100%,47%)]">Tamyeez</span>?
               </h3>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center mt-0.5">
-                    <div className="w-2 h-2 bg-primary-foreground rounded-full" />
+              
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <div className="w-8 h-8 bg-[hsl(200,100%,47%)] rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+                    <div className="w-3 h-3 bg-white rounded-full" />
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground">Enterprise-Grade at SMB Prices</h4>
-                    <p className="text-muted-foreground text-sm">Get Fortune 500 level solutions without the enterprise budget</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center mt-0.5">
-                    <div className="w-2 h-2 bg-primary-foreground rounded-full" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground">No Technical Skills Needed</h4>
-                    <p className="text-muted-foreground text-sm">We handle setup, customization, deployment, and training</p>
+                  <div className="space-y-2">
+                    <h4 className="font-bold text-white">Enterprise-Grade at SMB Prices</h4>
+                    <p className="text-white/70 text-sm">Get Fortune 500 level solutions without the enterprise budget</p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center mt-0.5">
-                    <div className="w-2 h-2 bg-primary-foreground rounded-full" />
+                
+                <div className="flex items-start space-x-4">
+                  <div className="w-8 h-8 bg-[hsl(200,100%,47%)] rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+                    <div className="w-3 h-3 bg-white rounded-full" />
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground">Microsoft Certified Experts</h4>
-                    <p className="text-muted-foreground text-sm">Partner-level certification ensures quality and reliability</p>
+                  <div className="space-y-2">
+                    <h4 className="font-bold text-white">No Technical Skills Needed</h4>
+                    <p className="text-white/70 text-sm">We handle setup, customization, deployment, and training</p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center mt-0.5">
-                    <div className="w-2 h-2 bg-primary-foreground rounded-full" />
+                
+                <div className="flex items-start space-x-4">
+                  <div className="w-8 h-8 bg-[hsl(200,100%,47%)] rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+                    <div className="w-3 h-3 bg-white rounded-full" />
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground">Proven ROI Methodology</h4>
-                    <p className="text-muted-foreground text-sm">Data-driven approach with measurable business outcomes</p>
+                  <div className="space-y-2">
+                    <h4 className="font-bold text-white">Microsoft Certified Experts</h4>
+                    <p className="text-white/70 text-sm">Partner-level certification ensures quality and reliability</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-4">
+                  <div className="w-8 h-8 bg-[hsl(200,100%,47%)] rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+                    <div className="w-3 h-3 bg-white rounded-full" />
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="font-bold text-white">Proven ROI Methodology</h4>
+                    <p className="text-white/70 text-sm">Data-driven approach with measurable business outcomes</p>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
 
-            <div className="space-y-6">
-              <div className="bg-gradient-card p-6 rounded-xl shadow-card">
-                <h4 className="text-lg font-semibold text-primary mb-3">Client Success Story</h4>
-                <blockquote className="text-muted-foreground italic mb-4">
-                  "Tamyeez transformed our manual processes into automated workflows. 
-                  We've saved over $50,000 annually and our team productivity has skyrocketed."
-                </blockquote>
-                <cite className="text-sm font-medium text-foreground">
-                  - Sarah Mitchell, Operations Director
-                </cite>
+          <div className="space-y-8">
+            {/* Client Success Story */}
+            <div className="glass-blue p-8 rounded-2xl border border-white/10">
+              <h4 className="text-lg font-semibold text-[hsl(200,100%,47%)] mb-4">Client Success Story</h4>
+              <blockquote className="text-white/90 italic text-lg mb-6 leading-relaxed">
+                "Tamyeez transformed our manual processes into automated workflows. 
+                We've saved over $50,000 annually and our team productivity has skyrocketed."
+              </blockquote>
+              <cite className="text-white/70 font-medium">
+                - Sarah Mitchell, Operations Director
+              </cite>
+            </div>
+            
+            {/* Statistics */}
+            <div className="grid grid-cols-3 gap-6 text-center">
+              <div className="space-y-2">
+                <div className="text-4xl font-bold text-[hsl(200,100%,47%)]">99%</div>
+                <div className="text-white/70 text-sm">Client Satisfaction</div>
               </div>
-              
-              <div className="grid grid-cols-3 gap-4 text-center">
-                <div>
-                  <div className="text-2xl font-bold text-primary">99%</div>
-                  <div className="text-xs text-muted-foreground">Client Satisfaction</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-primary">50+</div>
-                  <div className="text-xs text-muted-foreground">Projects Delivered</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-primary">24h</div>
-                  <div className="text-xs text-muted-foreground">Response Time</div>
-                </div>
+              <div className="space-y-2">
+                <div className="text-4xl font-bold text-[hsl(200,100%,47%)]">50+</div>
+                <div className="text-white/70 text-sm">Projects Delivered</div>
+              </div>
+              <div className="space-y-2">
+                <div className="text-4xl font-bold text-[hsl(200,100%,47%)]">24h</div>
+                <div className="text-white/70 text-sm">Response Time</div>
               </div>
             </div>
           </div>

@@ -1,0 +1,89 @@
+Create a new GitHub Actions workflow file to automate the deployment of the React application to GitHub Pages.
+
+## Workflow File
+Create a new file `.github/workflows/deploy-react.yml` with the following content:
+
+```yaml
+name: Deploy React App to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Build
+        run: npm run build
+      
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './build'
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+```
+
+## Implementation Details:
+1. The workflow will run on:
+   - Push to the `main` branch
+   - Manual trigger through workflow_dispatch
+
+2. Required permissions are set for:
+   - contents: read
+   - pages: write
+   - id-token: write
+
+3. Workflow includes two jobs:
+   - `build`: Builds the React application
+   - `deploy`: Deploys the built application to GitHub Pages
+
+4. The workflow uses latest versions of official GitHub Actions:
+   - actions/checkout@v4
+   - actions/setup-node@v4
+   - actions/configure-pages@v4
+   - actions/upload-pages-artifact@v3
+   - actions/deploy-pages@v4
+
+## Prerequisites:
+1. Repository must have GitHub Pages enabled
+2. Node.js project with a build script configured in package.json
+3. Dependencies properly listed in package.json
+
+## Note:
+The workflow assumes the build output is in the './build' directory. If your React app builds to a different directory, update the `path` in the Upload artifact step accordingly.

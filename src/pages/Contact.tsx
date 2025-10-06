@@ -302,14 +302,19 @@ const Contact = () => {
                 {/* Quick Contact */}
                 <Card className="card-gradient shadow-card">
                   <CardContent className="p-6 text-center space-y-4">
-                    <h3 className="font-semibold text-foreground">Prefer to call?</h3>
+                    <h3 className="font-semibold text-foreground">Prefer to contact us directly?</h3>
                     <Button variant="outline" size="lg" className="w-full">
                       <Phone className="mr-2 h-5 w-5" />
-                      (555) 123-4567
+                      +1 (780) 851 4645
                     </Button>
-                    <p className="text-sm text-muted-foreground">
-                      Available Mon-Fri, 8am-6pm EST
-                    </p>
+                    <Button variant="outline" size="lg" className="w-full mt-2">
+                      <Mail className="mr-2 h-5 w-5" />
+                      sales@tamyeezsolutions.ca
+                    </Button>
+                    <div className="flex items-center justify-center mt-2">
+                      <MapPin className="h-5 w-5 mr-2" />
+                      <span className="text-sm text-muted-foreground">Edmonton, AB, Canada</span>
+                    </div>
                   </CardContent>
                 </Card>
               </div>
